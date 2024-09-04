@@ -4,7 +4,7 @@ public class SimulacroMareas
 {
 	public static void main(String[] args) 
 	{
-		Scanner sc = new Scanner(System.in); //Scanner para entrada de datos.
+		Scanner scanner = new Scanner(System.in); //Scanner para entrada de datos.
         int fechaActual = 0, ultimaFecha = 0; //fecha actual y la última.
         double alturaMinima, alturaMaxima, diferencia; //máx y min y su diferencia.
         int fechaMayorDiferencia = 0; //Fecha donde hubo piu diferencia.
@@ -13,7 +13,7 @@ public class SimulacroMareas
 
         //Comenzamos el programa pidiendo la fecha, el dato de entrada.
         System.out.print("Ingresa la fecha (AA/MM/DD) o -1 para finalizar: ");
-        fechaActual = sc.nextInt(); 
+        fechaActual = scanner.nextInt(); 
 
         while (fechaActual != -1) //Mientras se ingrese un número != a -1 se ejecutará el bloque de código. El usuario indica que no quiere acabar el programa.
         {
@@ -21,9 +21,9 @@ public class SimulacroMareas
             {
             	//Pedimos el mín y máx de la marea.
                 System.out.print("Ingresa la altura mínima de la marea: ");
-                alturaMinima = sc.nextDouble();
+                alturaMinima = scanner.nextDouble();
                 System.out.print("Ingresa la altura máxima de la marea: ");
-                alturaMaxima = sc.nextDouble();
+                alturaMaxima = scanner.nextDouble();
 
                 //La altura mínima siempre debe ser menor o igual a la máxima por lo tanto si..
                 if (alturaMinima > alturaMaxima) //se confundió e invertió los ingresos, los intercambiamos para que estén correctos.
@@ -60,7 +60,7 @@ public class SimulacroMareas
             }
 
             System.out.print("Ingresa la fecha (AAAAMMDD) o -1 para finalizar: "); 
-            fechaActual = sc.nextInt();//Le volvemos a pedir el ingreso del número por cualquiera de las 2 bifuraciones.
+            fechaActual = scanner.nextInt();//Le volvemos a pedir el ingreso del número por cualquiera de las 2 bifuraciones.
         }
 
         //Al finalizar el bucle (ingreso de -1) evaluamos si se obtuvieron datos correctos en al menos una iteración
@@ -75,6 +75,6 @@ public class SimulacroMareas
             System.out.println("No hay suficientes datos procesados.");
         }
 
-        sc.close(); //Cerramos el scanner por buena práctica.
+        scanner.close(); //Cerramos el scanneranner por buena práctica.
 	}
 }
