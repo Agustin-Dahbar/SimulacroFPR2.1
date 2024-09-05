@@ -6,7 +6,7 @@ public class SimulacroMareas
 	{
 		Scanner scanner = new Scanner(System.in); //Scanner para entrada de datos.
         int fechaActual = 0, ultimaFecha = 0; //fecha actual y la última.
-        double alturaMinima, alturaMaxima, diferencia; //máx y min y su diferencia.
+        double alturaMinima, alturaMaxima, diferencia = 0; //máx y min y su diferencia.
         int fechaMayorDiferencia = 0; //Fecha donde hubo piu diferencia.
         double mayorDiferencia = 0; //El valor de mayor diferencia.
         boolean hayDatos = false; //Información sobre si hay o no datos.
@@ -15,9 +15,11 @@ public class SimulacroMareas
         System.out.print("Ingresa la fecha (AA/MM/DD) o -1 para finalizar: ");
         fechaActual = scanner.nextInt(); 
 
-        while (fechaActual != -1) //Mientras se ingrese un número != a -1 se ejecutará el bloque de código. El usuario indica que no quiere acabar el programa.
+        //Mientras se ingrese un número != a -1 se ejecutará el bloque de código. El usuario indica que no quiere acabar el programa.
+        while (fechaActual != -1) 
         {
-            if (fechaActual > ultimaFecha) //Si el numero ingresado es mayor al ultimoNumero ingresado o 0 en la primera iteración se ejecuta el programa.
+        	//Si el numero ingresado es mayor al ultimoNumero ingresado o 0 en la primera iteración se ejecuta el programa.
+            if (fechaActual > ultimaFecha) 
             {
             	//Pedimos el mín y máx de la marea.
                 System.out.print("Ingresa la altura mínima de la marea: ");
@@ -34,7 +36,8 @@ public class SimulacroMareas
                     alturaMaxima = temp; //alturaMinima almacenada en la var temporal ya que se perdió el valor en la línea anterior.
                 }
 
-                diferencia = alturaMaxima - alturaMinima; //Sacamos la diferencia de la altura.
+                //Sacamos la diferencia de la altura.
+                diferencia = alturaMaxima - alturaMinima; 
 
                 //Salimos todos los datos pedidos.
                 System.out.println("Fecha: " + fechaActual);
@@ -75,6 +78,6 @@ public class SimulacroMareas
             System.out.println("No hay suficientes datos procesados.");
         }
 
-        scanner.close(); //Cerramos el scanneranner por buena práctica.
+        scanner.close(); //Cerramos el Scanner por buena práctica.
 	}
 }
